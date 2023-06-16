@@ -14,6 +14,24 @@
         Clear
       </button>
     </div>
+    <div
+      class="flex flex-col items-center max-w-md mx-auto bg-trasnparent rounded-lg pt-3"
+    >
+      <label
+        class="text-white flex font-bold py-2 rounded items-start w-[257px]"
+        >Filter by year</label
+      >
+      <select
+        class="bg-white w-[257px] text-black font-bold py-2 px-4 rounded"
+        @change="filterByYear"
+      >
+        <option value="all">All</option>
+        <option value="2021">2021</option>
+        <option value="2020">2020</option>
+        <option value="2019">2019</option>
+      </select>
+    </div>
+
     <CardList :movies="movies" />
   </div>
 </template>
@@ -57,10 +75,16 @@ export default {
       store.dispatch("moviesModule/searchMovies", value);
     };
 
+    const filterByYear = (event) => {
+      const value = event.target.value;
+      store.dispatch("moviesModule/filterByReleaseDate", value);
+    };
+
     return {
       movies,
       search,
       clear,
+      filterByYear,
     };
   },
 };

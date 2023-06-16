@@ -33,3 +33,11 @@ export const clearMovies = async ({ commit }) => {
   const { data } = await moviesApi.get(`/trending/all/day?api_key=${key}`);
   commit("clearMovies", data.results);
 };
+
+export const filterByReleaseDate = async ({ commit }, year) => {
+  const { data } = await moviesApi.get(
+    `/discover/movie?api_key=${key}&primary_release_year=${year}`
+  );
+
+  commit("setMoviesSearch", data.results);
+};

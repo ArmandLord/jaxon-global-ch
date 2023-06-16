@@ -5,7 +5,7 @@
         <input
           type="search"
           class="w-full px-4 py-1 text-gray-800 rounded-full focus:outline-none"
-          placeholder="search"
+          placeholder="Search"
           @input="$emit('update:search', $event.target.value)"
         />
       </div>

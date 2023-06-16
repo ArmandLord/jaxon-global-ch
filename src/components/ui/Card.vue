@@ -37,7 +37,7 @@
           </div>
 
           <footer class="mb-10 flex justify-center">
-            <button
+            <!-- <button
               class="flex items-center rounded-lg bg-[#FF7308] px-4 py-2.5 text-xl font-bold text-white hover:bg-[#E56707]"
             >
               <p>Start</p>
@@ -53,7 +53,13 @@
                   clip-rule="evenodd"
                 ></path>
               </svg>
-            </button>
+            </button> -->
+            <img
+              :src="`https://www.themoviedb.org/t/p/w220_and_h330_face/${image}`"
+              alt=""
+              style="object-fit: cover; object-position: center"
+              class="h-20 w-20 rounded-full hover:rounded hover:w-full hover:h-24 transition duration-300 ease-in-out"
+            />
           </footer>
         </section>
       </div>

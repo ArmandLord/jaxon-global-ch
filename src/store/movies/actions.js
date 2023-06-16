@@ -28,3 +28,8 @@ export const searchMovies = async ({ commit }, query) => {
 
   commit("setMoviesSearch", data.results);
 };
+
+export const clearMovies = async ({ commit }) => {
+  const { data } = await moviesApi.get(`/trending/all/day?api_key=${key}`);
+  commit("clearMovies", data.results);
+};

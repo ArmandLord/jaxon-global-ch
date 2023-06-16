@@ -9,3 +9,7 @@ export const setMovieDetails = (state, movie) => {
 export const setMoviesSearch = (state, movies) => {
   state.movies = movies;
 };
+
+export const clearMovies = (state, movies) => {
+  state.movies = movies;
+};

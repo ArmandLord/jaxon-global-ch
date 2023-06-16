@@ -4,6 +4,16 @@
   </div>
   <div v-else>
     <SearchBar @keyup.enter="search" :search="search" />
+    <div
+      class="flex items-center justify-center max-w-md mx-auto bg-trasnparent rounded-lg"
+    >
+      <button
+        class="bg-yellow-500 w-[257px] hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded"
+        @click="clear"
+      >
+        Clear
+      </button>
+    </div>
     <CardList :movies="movies" />
   </div>
 </template>
@@ -37,6 +47,11 @@ export default {
       }
     );
 
+    const clear = () => {
+      console.log("clear");
+      store.dispatch("moviesModule/clearMovies");
+    };
+
     const search = (event) => {
       const value = event.target.value;
       store.dispatch("moviesModule/searchMovies", value);
@@ -45,6 +60,7 @@ export default {
     return {
       movies,
       search,
+      clear,
     };
   },
 };

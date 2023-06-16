@@ -10,7 +10,11 @@
       >
         <img
           class="absolute inset-0 w-full h-full object-cover object-center"
-          :src="`https://www.themoviedb.org/t/p/w220_and_h330_face/${movie.poster_path}`"
+          :src="
+            movie.poster_path === null
+              ? 'https://via.placeholder.com/300x300'
+              : `https://www.themoviedb.org/t/p/w220_and_h330_face/${movie.poster_path}`
+          "
           alt=""
         />
         <div

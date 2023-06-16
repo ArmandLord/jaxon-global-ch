@@ -13,3 +13,18 @@ export const loadMovieDetails = async ({ commit }, id) => {
 
   commit("setMovieDetails", data);
 };
+
+export const searchMovies = async ({ commit }, query) => {
+  if (!query) return;
+
+  const { data } = await moviesApi.get(
+    `/search/movie?api_key=${key}&query=${query}`
+  );
+
+  if (data.results.length === 0) {
+    commit("setMoviesSearch", null);
+    return;
+  }
+
+  commit("setMoviesSearch", data.results);
+};

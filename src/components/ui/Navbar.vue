@@ -7,7 +7,7 @@
         <span class="font-bold text-xl tracking-tight text-yellow-400">
           JX
         </span>
-        <span class="font-bold text-xl tracking-tight text-orange-500">
+        <span class="font-bold text-xl tracking-tight text-[#FE5401]">
           M🍿VIES
         </span>
       </router-link>

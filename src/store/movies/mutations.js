@@ -5,3 +5,7 @@ export const setMovies = (state, movies) => {
 export const setMovieDetails = (state, movie) => {
   state.movieDetails = movie;
 };
+
+export const setMoviesSearch = (state, movies) => {
+  state.movies = movies;
+};
